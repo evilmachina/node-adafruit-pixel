@@ -11,8 +11,5 @@
   "dependencies": {
       "easing": "*",
       "spi": "spi"
-  },
-  "engines": {
-    "node": ["node >= 0.6"]
   }
 }
