@@ -71,7 +71,7 @@ function Pixel(device, num_pixels) {
     this.pixel_buffer = new Buffer(num_pixels*3);
     this.off_buffer = new Buffer(num_pixels*3);
     this.device = new spi.Spi(device, {
-                                        "mode": spi.MODE[0],
+                                        "mode": spi.MODE['MODE_0'],
                                         "chipSelect": spi.CS['none'],
                                         "maxSpeed": 1000000
                                     }, function(s){
