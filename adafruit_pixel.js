@@ -74,13 +74,12 @@ function Pixel(device, num_pixels) {
                                         "mode": spi.MODE['MODE_0'],
                                         "chipSelect": spi.CS['none'],
                                         "maxSpeed": 1000000
-                                    }, function(s){
-                                        s.open();
-                                        this.pixel_buffer.fill(0);
-                                        this.off_buffer.fill(0);
-                                        s.write(this.pixel_buffer);
-                                        this.animate = null;});
-    
+                                    });
+    this.device.open();
+    this.pixel_buffer.fill(0);
+    this.off_buffer.fill(0);
+    this.device.write(this.pixel_buffer);
+    this.animate = null;
 
 
 };
