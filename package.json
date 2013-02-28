@@ -10,6 +10,6 @@
   "main": "./adafruit_pixel.js",
   "dependencies": {
       "easing": "*",
-      "spi": "spi"
+      "spi": ""
   }
 }
