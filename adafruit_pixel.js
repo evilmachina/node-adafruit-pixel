@@ -76,10 +76,10 @@ function Pixel(device, num_pixels) {
                                         "maxSpeed": 1000000
                                     }, function(s){
                                         s.open();
-                                        s.pixel_buffer.fill(0);
-                                        s.off_buffer.fill(0);
-                                        s.device.write(this.pixel_buffer);
-                                        s.animate = null;});
+                                        this.pixel_buffer.fill(0);
+                                        this.off_buffer.fill(0);
+                                        s.write(this.pixel_buffer);
+                                        this.animate = null;});
     
 
 
