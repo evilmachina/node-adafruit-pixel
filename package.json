@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git://github.com/RussTheAerialist/node-adafruit-pixel.git"
   },
-  "main": "./adafruit_pixel.js",
+  "main": "./adafruit-pixel",
   "dependencies": {
       "easing": "*",
       "spi": ""
