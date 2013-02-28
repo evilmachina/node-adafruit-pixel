@@ -10,6 +10,6 @@
   "main": "./adafruit-pixel",
   "dependencies": {
       "easing": "*",
-      "spi": ""
+      "spi": "git://github.com/RussTheAerialist/node-spi.git"
   }
 }
