@@ -70,17 +70,19 @@ function Pixel(device, num_pixels) {
     this.num_pixels = num_pixels;
     this.pixel_buffer = new Buffer(num_pixels*3);
     this.off_buffer = new Buffer(num_pixels*3);
-    this.device = new spi.Spi();
-    this.device.open(device, {
-        "mode": spi.MODE[0],
-        "chipSelect": spi.CS['none'],
-        "maxSpeed": 1000000
-    });
+    this.device = new spi.Spi(device, {
+                                        "mode": spi.MODE[0],
+                                        "chipSelect": spi.CS['none'],
+                                        "maxSpeed": 1000000
+                                    }, function(s){
+                                        s.open();
+                                        this.pixel_buffer.fill(0);
+                                        this.off_buffer.fill(0);
+                                        this.device.write(this.pixel_buffer);
+                                        this.animate = null;});
+    
 
-    this.pixel_buffer.fill(0);
-    this.off_buffer.fill(0);
-    this.device.write(this.pixel_buffer);
-    this.animate = null;
+
 };
 
 Pixel.prototype.off = function() {
